@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body{
+  font-family: 'Titillium Web', sans-serif;
+}
+
 .background{
   display: flex;
   align-items: center;
@@ -30,4 +34,47 @@ main{
   width: 60%;
   height: 100%;
   background-color: blue;
+}
+
+.top{
+  background-color: #EAEAEA;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+aside .top{
+  border-right: 1px solid #D7D6D7;
+}
+.top .user, .top .friends{
+  display: flex;
+}
+
+.top .user img, .top .friends img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 5px 10px;
+}
+aside .top .user h5{
+  line-height: 50px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.utility i{
+  color: #B1B1B2;
+  padding-right: 10px;
+}
+
+.friend-description{
+  padding-top: 6px;
+}
+.friends h5{
+  font-size: 12px;
+}
+
+.friends p{
+  font-size: 10px;
+  color: #6B7376;
 }
