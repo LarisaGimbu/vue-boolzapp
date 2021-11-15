@@ -8,6 +8,9 @@ body{
   font-family: 'Titillium Web', sans-serif;
 }
 
+i:hover{
+  cursor: pointer;
+}
 
 .background{
   display: flex;
@@ -68,6 +71,10 @@ aside .top .user h5{
   padding-right: 10px;
 }
 
+.top i:hover{
+  color: #606061;
+}
+
 .friend-description{
   padding-top: 6px;
 }
@@ -96,6 +103,12 @@ aside .top .user h5{
   padding: 12px 10px;
   border-radius: 50%;
   color:  #8DDBFD;
+  transition: all 0.5s;
+}
+
+.notify i:hover{
+  background-color: #B1B1B2;
+  color: white;
 }
 
 .notify-msg{
@@ -107,6 +120,9 @@ aside .top .user h5{
 .notify-msg a{
   font-size: 10px;
   color: #4F7485;
+}
+.notify-msg a:hover{
+  color: white;
 }
 
 .search{
@@ -156,6 +172,11 @@ aside .top .user h5{
   justify-content: space-between;
   border-top: 1px solid #EAEAEA;
 }
+.contact:hover{
+  background-color: #eaeaea7c;
+  cursor: pointer;
+}
+
 .contact.active{
   background-color: #EAEAEA;
 }
@@ -214,14 +235,26 @@ aside .top .user h5{
   background-color: #FFFFFF;
 }
 
-
-
-
-
 .main-bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 50px;
   background-color: #F3EEEA;
   border-left: 1.5px solid #EAEAEA;
+}
+
+.main-bottom i{
+  color: #6B7276;
+  padding: 20px;
+}
+.main-bottom input{
+  border: none;
+  height: 40px;
+  border-radius: 5px;
+  color: #6B7276;
+  width: 80%;
+  padding-left: 10px;
 }
 
 
