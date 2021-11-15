@@ -3,3 +3,14 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+.top-background{
+  height: 100px;
+  background-color: #249688;
+}
+
+.main-background{
+  height: calc(100vh - 100px);
+  background: rgb(221,219,210);
+  background: linear-gradient(0deg, rgba(221,219,210,1) 0%, rgba(211,219,220,1) 100%);
+}
