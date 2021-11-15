@@ -72,9 +72,38 @@ aside .top .user h5{
 }
 .friends h5{
   font-size: 12px;
+  font-weight: 400;
 }
 
 .friends p{
   font-size: 10px;
   color: #6B7376;
+}
+
+.notify{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: #8DDBFD;
+}
+
+.notify i{ 
+  height: 40px;
+  margin: 10px;
+  background-color: white;
+  padding: 12px 10px;
+  border-radius: 50%;
+  color:  #8DDBFD;
+}
+
+.notify-msg{
+  line-height: 15px;
+}
+.notify-msg h5{
+  font-size: 12px;
+}
+.notify-msg a{
+  font-size: 10px;
+  color: #4F7485;
 }
