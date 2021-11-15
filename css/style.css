@@ -8,6 +8,7 @@ body{
   font-family: 'Titillium Web', sans-serif;
 }
 
+
 .background{
   display: flex;
   align-items: center;
@@ -33,7 +34,7 @@ aside{
 main{
   width: 60%;
   height: 100%;
-  background-color: blue;
+  background-color: white;
 }
 
 .top{
@@ -146,7 +147,7 @@ aside .top .user h5{
   width: 97%;
   height: calc(100% - 135px);
   background-color: white;
-  border-right: 1px solid #EAEAEA;
+  border-right: 1.5px solid #EAEAEA;
 
 }
 .contact{
@@ -171,6 +172,53 @@ aside .top .user h5{
 }
 .date{
   padding-top: 6px;
+}
+
+.main-content{
+  display: flex;
+  align-items: center;
+  width: 98%;
+  height: calc(100% - 100px);
+  background-image: url("../img/mine.jpg");
+}
+
+.msg-container{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  height: 80%;
+  background-color: red;
+}
+ 
+.msg-container .date{
+  text-align: end;
+  padding-top: 0;
+}
+
+.message{
+  width: 45%;
+  font-size: 12px;
+  padding: 10px 0 5px 10px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+.msg-container .sent{
+  background-color: #D6FABB;
+  position: relative;
+  left: 100%;
+  transform: translate(-100%);
+}
+
+
+
+
+
+
+.main-bottom{
+  height: 50px;
+  background-color: #F3EEEA;
+  border-left: 1.5px solid #EAEAEA;
 }
 
 
