@@ -27,7 +27,7 @@ body{
 aside{
   width: 40%;
   height: 100%;
-  background-color: red;
+  background-color: #FAFAFA;
 }
 
 main{
@@ -46,11 +46,11 @@ main{
 aside .top{
   border-right: 1px solid #D7D6D7;
 }
-.top .user, .top .friends{
+.top .user, .contact-chat, .contact, .profile{
   display: flex;
 }
 
-.top .user img, .top .friends img{
+.top .user img, .contact-chat img, .contact .profile img{
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -62,7 +62,7 @@ aside .top .user h5{
   font-weight: bold;
 }
 
-.utility i{
+.utility i, .date{
   color: #B1B1B2;
   padding-right: 10px;
 }
@@ -70,12 +70,12 @@ aside .top .user h5{
 .friend-description{
   padding-top: 6px;
 }
-.friends h5{
+.name{
   font-size: 12px;
   font-weight: 400;
 }
 
-.friends p{
+.access{
   font-size: 10px;
   color: #6B7376;
 }
@@ -119,7 +119,7 @@ aside .top .user h5{
 .search button, .search input{
   height: 30px;
   background-color: white;
-  border: 1px solid #B7BBBC;
+  border: 1px solid #EAEAEA;
   color: #B7BBBC;
 }
 
@@ -141,3 +141,36 @@ aside .top .user h5{
   border-bottom-right-radius: 3px;
   border-left: none;
 }
+
+.contacts{
+  width: 97%;
+  height: calc(100% - 135px);
+  background-color: white;
+  border-right: 1px solid #EAEAEA;
+
+}
+.contact{
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #EAEAEA;
+}
+.contact.active{
+  background-color: #EAEAEA;
+}
+.profile img{
+  width: 45px;
+  height: 45px;
+}
+.msg-text, .date{
+  font-size: 10px;
+  color: #B8BCBD;
+}
+.msg-text::after{
+  content: "...";
+}
+.date{
+  padding-top: 6px;
+}
+
+
