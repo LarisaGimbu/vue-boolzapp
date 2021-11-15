@@ -107,3 +107,37 @@ aside .top .user h5{
   font-size: 10px;
   color: #4F7485;
 }
+
+.search{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 35px;
+}
+
+.search button, .search input{
+  height: 30px;
+  background-color: white;
+  border: 1px solid #B7BBBC;
+  color: #B7BBBC;
+}
+
+.search button{
+  width: 20%;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-right: none;
+  transition: all 0.3s;
+}
+.search button:hover{
+  background-color: #EAEBEB;
+  cursor: pointer;
+}
+.search input{
+  width: 77%;
+  padding-left: 10px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-left: none;
+}
