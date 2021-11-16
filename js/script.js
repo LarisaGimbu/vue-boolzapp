@@ -94,7 +94,6 @@ const app = new Vue({
  
   },
 
- 
 });
 
 
