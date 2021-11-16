@@ -5,9 +5,8 @@ const app = new Vue({
     contacts:[
       {
         name: 'Michele',
-        profile: 'img/avatar_1.jpg',
-        textMsg: 'Tutto fatto!',
-        active: true,
+        avatar: 'img/avatar_1.jpg',
+        visible: true,
         messages: [
           {
             date: '10/01/2020 15:30:55',
@@ -28,9 +27,8 @@ const app = new Vue({
       },
       {
         name: 'Fabio',
-        profile: 'img/avatar_2.jpg',
-        textMsg: 'Mi piacerebbe ma devo andare a',
-        active: false,
+        avatar: 'img/avatar_2.jpg',
+        visible: false,
         messages: [
           {
             date: '20/03/2020 16:30:00',
@@ -51,9 +49,8 @@ const app = new Vue({
       },
       {
         name: 'Samuel',
-        profile: 'img/avatar_3.jpg',
-        textMsg: 'Ah scusa!',
-        active: false,
+        avatar: 'img/avatar_3.jpg',
+        visible: false,
         messages: [
           {
             date: '28/03/2020 10:10:40',
@@ -74,9 +71,8 @@ const app = new Vue({
       },
       {
         name: 'Luisa',
-        profile: 'img/avatar_6.jpg',
-        textMsg: 'Si, ma preferirei andare al ci',
-        active: false,
+        avatar: 'img/avatar_6.jpg',
+        visible: false,
         messages: [
           {
             date: '10/01/2020 15:30:55',
@@ -99,12 +95,12 @@ const app = new Vue({
       this.activeChat = index;
 
       this.contacts.forEach((contact) =>{
-        if(contact.active === true){
-          contact.active = false;
+        if(contact.visible === true){
+          contact.visible = false;
         }
       })
 
-      this.contacts[index].active= true;
+      this.contacts[index].visible= true;
       
     }
   }

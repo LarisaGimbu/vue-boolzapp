@@ -46,14 +46,14 @@
           <div class="contacts">
             <div 
             v-for="(contact, index) in contacts" 
-            :class= "{'active': contact.active}"
+            :class= "{'active': contact.visible}"
             @click="showChat(index)"
             class="contact">
               <div class="profile">
-                <img :src="contact.profile" alt="">
+                <img :src="contact.avatar" alt="">
                 <div class="friend-description">
                   <h5 class="name">{{contact.name}}</h5>
-                  <p class="msg-text">{{contact.textMsg}}</p>
+                  <p class="msg-text">Text message</p>
                 </div>
               </div>
               <div class="date">
@@ -69,7 +69,7 @@
         <main>
           <div class="top">
             <div class="contact-chat">
-              <img v-if="activeChat >= 0" :src="contacts[activeChat].profile" alt="">
+              <img v-if="activeChat >= 0" :src="contacts[activeChat].avatar" alt="">
               <div class="friend-description">
                 <h5 v-if="activeChat >= 0" class="name">{{contacts[activeChat].name}}</h5>
                 <p v-if="activeChat >= 0" class="access">Ultimo accesso {{contacts[activeChat].messages[0].date}}</p>
