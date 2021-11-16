@@ -69,10 +69,10 @@
         <main>
           <div class="top">
             <div class="contact-chat">
-              <img src="img/avatar_1.jpg" alt="">
+              <img v-if="activeChat >= 0" :src="contacts[activeChat].profile" alt="">
               <div class="friend-description">
                 <h5 v-if="activeChat >= 0" class="name">{{contacts[activeChat].name}}</h5>
-                <p class="access">Ultimo accesso oggi alle 16.15</p>
+                <p v-if="activeChat >= 0" class="access">Ultimo accesso {{contacts[activeChat].messages[0].date}}</p>
               </div>
             </div>
             <div class="utility">
@@ -84,19 +84,12 @@
           
           <div class="main-content">
             <div class="msg-container">
-              <div class="message sent">
-                <p>Hai portato a spasso il cane?</p>
-                <p class="date">data e ora</p>
-              </div>
-
-              <div class="message sent">
-                <p>Ricordati di dargli da mangiare</p>
-                <p class="date">data e ora</p>
-              </div>
-
-              <div class="message received">
-                <p>Tutto fatto!</p>
-                <p class="date">data e ora</p>
+              <div 
+              v-for="(message, index) in contacts[activeChat].messages"
+              :class="{'sent': message.status === 'sent', 'received': message.status === 'received'}"
+              class="message ">
+                <p>{{message.message}}</p>
+                <p class="date">{{message.date}}</p>
               </div>
             </div>
           </div>
