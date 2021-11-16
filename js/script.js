@@ -7,7 +7,7 @@ const app = new Vue({
         name: 'Michele',
         profile: 'img/avatar_1.jpg',
         textMsg: 'Tutto fatto!',
-        active: false,
+        active: true,
         messages: [
           {
             date: '10/01/2020 15:30:55',
@@ -97,6 +97,13 @@ const app = new Vue({
   methods:{
     showChat(index){
       this.activeChat = index;
+
+      this.contacts.forEach((contact) =>{
+        if(contact.active === true){
+          contact.active = false;
+        }
+      })
+
       this.contacts[index].active= true;
       
     }
