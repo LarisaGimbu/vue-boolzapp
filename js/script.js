@@ -74,7 +74,7 @@ const app = new Vue({
       },
       {
         name: 'Luisa',
-        profile: 'img/avatar_4.jpg',
+        profile: 'img/avatar_6.jpg',
         textMsg: 'Si, ma preferirei andare al ci',
         active: false,
         messages: [
