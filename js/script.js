@@ -53,7 +53,7 @@ const app = new Vue({
         name: 'Samuel',
         profile: 'img/avatar_3.jpg',
         textMsg: 'Ah scusa!',
-        active: true,
+        active: false,
         messages: [
           {
             date: '28/03/2020 10:10:40',
@@ -91,9 +91,18 @@ const app = new Vue({
         ],
       },
     ],
- 
+    activeChat : -1
   },
 
+  methods:{
+    showChat(index){
+      this.activeChat = index;
+      this.contacts[index].active= true;
+      
+    }
+  }
+
+  
 });
 
 
