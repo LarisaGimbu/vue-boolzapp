@@ -88,7 +88,7 @@
             class="msg-container">
               <div 
               v-for="(message, index) in contacts[activeChat].messages"
-              :class="{'sent': message.status === 'sent', 'received': message.status === 'received'}"
+              v-bind:class="message.status"
               class="message ">
                 <p>{{message.message}}</p>
                 <p class="date">{{message.date}}</p>
