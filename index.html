@@ -45,7 +45,7 @@
 
           <div class="contacts">
             <div 
-            v-for="contact in contacts" 
+            v-for="(contact, index) in contacts" 
             :class= "{'active': contact.active}"
             class="contact">
               <div class="profile">

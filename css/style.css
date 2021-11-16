@@ -24,6 +24,7 @@ i:hover{
 .wrapper{
   display: flex;
   width: 80%;
+  min-width: 600px;
   margin: 0 auto;
   height: 95vh;
 }
@@ -160,10 +161,11 @@ aside .top .user h5{
 }
 
 .contacts{
-  width: 97%;
+  width: 100%;
   height: calc(100% - 135px);
   background-color: white;
   border-right: 1.5px solid #EAEAEA;
+  overflow: auto;
 
 }
 .contact{
@@ -198,9 +200,10 @@ aside .top .user h5{
 .main-content{
   display: flex;
   align-items: center;
-  width: 98%;
+  width: 100%;
   height: calc(100% - 100px);
   background-image: url("../img/mine.jpg");
+  overflow: auto;
 }
 
 .msg-container{
