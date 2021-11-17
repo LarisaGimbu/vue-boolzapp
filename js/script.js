@@ -81,7 +81,7 @@ const app = new Vue({
           },
           {
               date: '10/01/2020 15:50:00',
-              message: 'Si, ma preferirei andare al cinema',
+              message: 'Si, ma preferirei andare al cinema ',
               status: 'received'
           }
         ],
@@ -102,8 +102,18 @@ const app = new Vue({
 
       this.contacts[index].visible= true;
       
+    },
+    getLastMessage(index){
+      lastMessage= this.contacts[index].messages[this.contacts[index].messages.length -1].message;
+
+      if(lastMessage.length > 30){
+        lastMessage = lastMessage.substr(0 , 30);
+      }
+      return lastMessage
     }
   }
+
+ 
 
   
 });
