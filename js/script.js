@@ -123,8 +123,19 @@ const app = new Vue({
 
       this.textInput ='';
 
-     
-    }
+      setTimeout(()=>{
+        
+        this.contacts[this.activeChat].messages.push({
+          date: '10/01/2020 15:50:00',
+          message: 'ok',
+          status: 'received'
+        })
+
+      }, 3000)
+
+    },
+
+    
   }
 
 });
