@@ -1,6 +1,23 @@
 const app = new Vue({
   el:'#app',
 
+  mounted() {
+   
+    
+    this.contacts.forEach((contact, index, array)=>{
+      for(let i = 0; i<= contact.name.length -1; i++){
+        // console.log(contact.name.charAt(i));
+        
+        if(this.searchChat === contact.name.charAt(i)){
+          
+        }
+        
+      }
+    })
+    
+    console.log(this.searchChat );
+  },
+  
   data:{
     contacts:[
       {
@@ -92,6 +109,7 @@ const app = new Vue({
     textInput: '',
 
     searchChat:'',
+
   },
 
   methods:{
@@ -136,10 +154,6 @@ const app = new Vue({
       }, 3000)
 
     },
-
-    getChat(){
-      
-    }
 
     
   }
