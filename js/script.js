@@ -87,7 +87,9 @@ const app = new Vue({
         ],
       },
     ],
-    activeChat : 0
+    activeChat : 0,
+
+    textInput: ''
   },
 
   methods:{
@@ -110,13 +112,21 @@ const app = new Vue({
         lastMessage = lastMessage.substr(0 , 30);
       }
       return lastMessage
+    },
+
+    insertNewMessage(){
+      this.contacts[this.activeChat].messages.push({
+        date: '10/01/2020 15:50:00',
+        message: this.textInput,
+        status: 'sent'
+      })
+
+      this.textInput ='';
+
+     
     }
   }
 
- 
-
-  
 });
-
 
 
