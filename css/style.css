@@ -260,4 +260,7 @@ aside .top .user h5{
   padding-left: 10px;
 }
 
+.d-none{
+  display: none;
+}
 

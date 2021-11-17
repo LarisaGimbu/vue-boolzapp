@@ -89,7 +89,9 @@ const app = new Vue({
     ],
     activeChat : 0,
 
-    textInput: ''
+    textInput: '',
+
+    searchChat:'',
   },
 
   methods:{
@@ -134,6 +136,10 @@ const app = new Vue({
       }, 3000)
 
     },
+
+    getChat(){
+      
+    }
 
     
   }
