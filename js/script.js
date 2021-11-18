@@ -153,6 +153,14 @@ const app = new Vue({
       
     },
 
+    closeUtilityBox(index){
+      if(this.showUtilityBox === index){
+        this.showUtilityBox = -1;
+      }else{
+        this.showUtilityBox = index;
+      }
+    },
+
     getMessageDelete(index){
       this.contacts[this.activeChat].messages.splice(index, 1);
     }
