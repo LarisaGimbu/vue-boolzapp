@@ -106,7 +106,8 @@
               v-for="(item, index) in contacts[activeChat].messages"
               v-bind:class="item.status"
               class="message ">
-                <p>{{item.message}}</p>
+                <p class="text-msg">{{item.message}}</p>
+                <i class="fas fa-chevron-down"></i>
                 <p class="date">{{item.date}}</p>
               </div>
             </div>

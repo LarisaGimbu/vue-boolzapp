@@ -217,6 +217,20 @@ main{
   margin: 0 auto;
   height: 80%;
 }
+.msg-container .text-msg{
+  position: relative;
+  display: inline-block;
+}
+.msg-container i{
+  display: none;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  color: gray;
+}
+.message:hover i{
+  display: block;
+}
 .msg-container .date{
   font-size: 8px;
   text-align: end;
@@ -238,6 +252,8 @@ main{
 }
 .msg-container .received{
   background-color: #FFFFFF;
+  position: relative;
+  left: 0;
 }
 
 /* msg text input  */
