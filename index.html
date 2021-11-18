@@ -108,11 +108,12 @@
               class="message ">
                 <p class="text-msg">{{item.message}}</p>
                 <i 
-                @click="showUtilityBox(index)"
+                @click="showUtilityBox = index"
                 class="fas fa-chevron-down"></i>
                 <p class="date">{{item.date}}</p>
                 <div 
-                :class="{'d-block': item.showUtility}"
+                v-if="showUtilityBox >= 0" 
+                :class="{'d-block': showUtilityBox === index}"
                 class="utility-box">
                   <ul>
                     <li><div class="btn">Message info</div></li>
