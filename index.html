@@ -87,7 +87,7 @@
               <img v-if="activeChat >= 0" :src="contacts[activeChat].avatar" alt="">
               <div class="friend-description">
                 <h5 v-if="activeChat >= 0" class="name">{{contacts[activeChat].name}}</h5>
-                <p v-if="activeChat >= 0" class="last-access">Ultimo accesso {{contacts[activeChat].messages[contacts[activeChat].messages.length -1].date}}</p>
+                <p v-if="activeChat >= 0" class="last-access">Ultimo accesso {{getLastAccess()}}</p>
               </div>
             </div>
             <div class="utility">

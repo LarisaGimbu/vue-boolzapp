@@ -99,43 +99,61 @@ const app = new Vue({
 
   methods:{
     getLastMessage(index){
-      lastMessage= this.contacts[index].messages[this.contacts[index].messages.length -1].message;
+      if(this.contacts[index].messages != 0){
+        lastMessage= this.contacts[index].messages[this.contacts[index].messages.length -1].message;
 
-      if(lastMessage.length > 30){
-        lastMessage = lastMessage.substr(0 , 30);
+        if(lastMessage.length > 30){
+          lastMessage = lastMessage.substr(0 , 30);
+        }
+
+        return lastMessage;
       }
-
-      return lastMessage;
+      
 
       
     },
     getLastDate(index){
-      lastDate= this.contacts[index].messages[this.contacts[index].messages.length -1].date;
+      if(this.contacts[index].messages != 0){
+        lastDate= this.contacts[index].messages[this.contacts[index].messages.length -1].date;
 
-      return lastDate
+        return lastDate;
+      }
+      
+    },
+
+    getLastAccess(){
+      if(this.contacts[this.activeChat].messages != 0){
+        lastAccess= this.contacts[this.activeChat].messages[this.contacts[this.activeChat].messages.length -1].date;
+
+        return lastAccess;
+      }
     },
 
     insertNewMessage(){
-      this.contacts[this.activeChat].messages.push({
-        date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
-        message: this.textInput,
-        status: 'sent',
-        showUtility: false
-        
-      })
 
-      this.textInput ='';
-
-      setTimeout(()=>{
-        
+      if(this.textInput != ''){
         this.contacts[this.activeChat].messages.push({
-          date: dayjs().format("DD/MM/YYYY HH:mm"),
-          message: 'ok',
-          status: 'received',
+          date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+          message: this.textInput,
+          status: 'sent',
           showUtility: false
+          
         })
-
-      }, 3000)
+  
+        this.textInput ='';
+  
+        setTimeout(()=>{
+          
+          this.contacts[this.activeChat].messages.push({
+            date: dayjs().format("DD/MM/YYYY HH:mm"),
+            message: 'ok',
+            status: 'received',
+            showUtility: false
+          })
+  
+        }, 3000)
+      }
+      
 
     },
 
