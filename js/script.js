@@ -131,12 +131,20 @@ const app = new Vue({
       if(lastMessage.length > 30){
         lastMessage = lastMessage.substr(0 , 30);
       }
-      return lastMessage
+
+      return lastMessage;
+
+      
+    },
+    getLastDate(index){
+      lastDate= this.contacts[index].messages[this.contacts[index].messages.length -1].date;
+
+      return lastDate
     },
 
     insertNewMessage(){
       this.contacts[this.activeChat].messages.push({
-        date: '10/01/2020 15:50:00',
+        date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
         message: this.textInput,
         status: 'sent'
       })
@@ -146,7 +154,7 @@ const app = new Vue({
       setTimeout(()=>{
         
         this.contacts[this.activeChat].messages.push({
-          date: '10/01/2020 15:50:00',
+          date: dayjs().format("DD/MM/YYYY HH:mm"),
           message: 'ok',
           status: 'received'
         })

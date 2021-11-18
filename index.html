@@ -20,6 +20,7 @@
 
         <!-- ASIDE  -->
         <aside>
+          <!-- user  -->
           <div class="top">
             <div class="user">
               <img src="img/avatar_io.jpg" alt="">
@@ -31,6 +32,9 @@
               <i class="fas fa-ellipsis-v"></i>
             </div>
           </div>
+          <!-- /user  -->
+
+          <!-- notify -->
           <div class="notify">
             <i class="fas fa-bell-slash"></i>
             <div class="notify-msg">
@@ -38,6 +42,8 @@
               <a href="#">Attiva notifiche desktop</a>
             </div>
           </div>
+
+          <!-- searchbar -->
           <div class="search">
             <button><i class="fas fa-search"></i></button>
             <input 
@@ -46,6 +52,7 @@
             placeholder="Cerca o inizia una nuova chat">
           </div>
 
+          <!-- contacts  -->
           <div class="contacts">
             <div 
             v-for="(contact, index) in contacts" 
@@ -60,22 +67,26 @@
                 </div>
               </div>
               <div class="date">
-                <p>{{contact.messages[0].date}}</p>
+                <p>{{getLastDate(index)}}</p>
               </div>
   
             </div>
 
           </div>
+          <!-- /contacts  -->
+
         </aside>
+        <!-- /ASIDE -->
 
         <!-- MAIN  -->
         <main>
+          <!-- active chat  -->
           <div class="top">
             <div class="contact-chat">
               <img v-if="activeChat >= 0" :src="contacts[activeChat].avatar" alt="">
               <div class="friend-description">
                 <h5 v-if="activeChat >= 0" class="name">{{contacts[activeChat].name}}</h5>
-                <p v-if="activeChat >= 0" class="access">Ultimo accesso {{contacts[activeChat].messages[0].date}}</p>
+                <p v-if="activeChat >= 0" class="last-access">Ultimo accesso {{contacts[activeChat].messages[contacts[activeChat].messages.length -1].date}}</p>
               </div>
             </div>
             <div class="utility">
@@ -85,6 +96,7 @@
             </div>
           </div>
           
+          <!-- messages  -->
           <div class="main-content">
             <div 
             v-if="activeChat >= 0" 
@@ -99,6 +111,7 @@
             </div>
           </div>
 
+          <!-- msg text input  -->
           <div class="main-bottom">
             <i class="far fa-smile"></i>
             <input 
@@ -115,6 +128,7 @@
   </div>
 
 
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/dayjs.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <script src="js/script.js"></script>
 </body>

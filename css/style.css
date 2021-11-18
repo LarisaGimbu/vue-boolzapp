@@ -20,7 +20,6 @@ i:hover{
   #249688 100px, rgba(221,219,210,1) 100px 40%, rgba(211,219,220,1) 100%);
 }
 
-
 .wrapper{
   display: flex;
   width: 80%;
@@ -29,18 +28,15 @@ i:hover{
   height: 95vh;
 }
 
+
+/**** ASIDE  ****/
 aside{
   width: 40%;
   height: 100%;
   background-color: #FAFAFA;
 }
 
-main{
-  width: 60%;
-  height: 100%;
-  background-color: white;
-}
-
+/* user  */
 .top{
   background-color: #EAEAEA;
   height: 50px;
@@ -51,10 +47,10 @@ main{
 aside .top{
   border-right: 1px solid #D7D6D7;
 }
+
 .top .user, .contact-chat, .contact, .profile{
   display: flex;
 }
-
 .top .user img, .contact-chat img, .contact .profile img{
   width: 40px;
   height: 40px;
@@ -76,19 +72,7 @@ aside .top .user h5{
   color: #606061;
 }
 
-.friend-description{
-  padding-top: 6px;
-}
-.name{
-  font-size: 12px;
-  font-weight: 400;
-}
-
-.access{
-  font-size: 10px;
-  color: #6B7376;
-}
-
+/* notify  */
 .notify{
   display: flex;
   align-items: center;
@@ -106,7 +90,6 @@ aside .top .user h5{
   color:  #8DDBFD;
   transition: all 0.5s;
 }
-
 .notify i:hover{
   background-color: #B1B1B2;
   color: white;
@@ -126,6 +109,7 @@ aside .top .user h5{
   color: white;
 }
 
+/* searchbar  */
 .search{
   display: flex;
   justify-content: center;
@@ -140,7 +124,6 @@ aside .top .user h5{
   border: 1px solid #EAEAEA;
   color: #B7BBBC;
 }
-
 .search button{
   width: 20%;
   border-top-left-radius: 3px;
@@ -160,6 +143,7 @@ aside .top .user h5{
   border-left: none;
 }
 
+/* contacts  */
 .contacts{
   width: 100%;
   height: calc(100% - 135px);
@@ -178,13 +162,21 @@ aside .top .user h5{
   background-color: #eaeaea7c;
   cursor: pointer;
 }
-
 .contact.active{
   background-color: #EAEAEA;
 }
+
 .profile img{
   width: 45px;
   height: 45px;
+}
+
+.friend-description{
+  padding-top: 6px;
+}
+.name{
+  font-size: 12px;
+  font-weight: 400;
 }
 .msg-text, .date{
   font-size: 10px;
@@ -195,6 +187,18 @@ aside .top .user h5{
 }
 .date{
   padding-top: 6px;
+}
+
+
+/**** MAIN  ****/
+main{
+  width: 60%;
+  height: 100%;
+  background-color: white;
+}
+.last-access{
+  font-size: 10px;
+  color: #6B7376;
 }
 
 .main-content{
@@ -213,7 +217,6 @@ aside .top .user h5{
   margin: 0 auto;
   height: 80%;
 }
- 
 .msg-container .date{
   font-size: 8px;
   text-align: end;
@@ -233,11 +236,11 @@ aside .top .user h5{
   left: 100%;
   transform: translate(-100%);
 }
-
 .msg-container .received{
   background-color: #FFFFFF;
 }
 
+/* msg text input  */
 .main-bottom{
   display: flex;
   justify-content: space-between;
@@ -246,7 +249,6 @@ aside .top .user h5{
   background-color: #F3EEEA;
   border-left: 1.5px solid #EAEAEA;
 }
-
 .main-bottom i{
   color: #6B7276;
   padding: 20px;
