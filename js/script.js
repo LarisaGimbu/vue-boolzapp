@@ -125,8 +125,11 @@ const app = new Vue({
       if(this.contacts[this.activeChat].messages != 0){
         lastAccess= this.contacts[this.activeChat].messages[this.contacts[this.activeChat].messages.length -1].date;
 
-        return lastAccess;
+      }else{
+        lastAccess = dayjs().format("DD/MM/YYYY HH:mm:ss");
       }
+      
+      return lastAccess;
     },
 
     insertNewMessage(){
