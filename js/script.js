@@ -162,7 +162,9 @@ const app = new Vue({
     },
 
     getMessageDelete(index){
+      this.showUtilityBox = -1;
       this.contacts[this.activeChat].messages.splice(index, 1);
+      
     }
     
   }
