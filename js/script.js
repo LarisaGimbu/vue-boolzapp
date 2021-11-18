@@ -162,9 +162,12 @@ const app = new Vue({
     },
 
     getMessageDelete(index){
-      this.showUtilityBox = -1;
-      this.contacts[this.activeChat].messages.splice(index, 1);
-      
+
+      if(confirm('Sei sicuro di voler eliminare il messaggio?')){
+        this.showUtilityBox = -1;
+        this.contacts[this.activeChat].messages.splice(index, 1);
+      }
+     
     }
     
   }
