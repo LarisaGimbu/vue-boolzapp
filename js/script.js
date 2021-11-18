@@ -163,16 +163,21 @@ const app = new Vue({
     },
 
     showUtilityBox(index){
-      for(let i= 0; i< this.contacts[this.activeChat].messages.length -1 ; i++ ){
-        this.contacts[this.activeChat].messages[i].showUtility = false;
-      }
       
+      // this.contacts[this.activeChat].messages.forEach((message, index, array) =>{
+      //   message.showUtility = false;
+      // })
+
 
       if(this.contacts[this.activeChat].messages[index].showUtility === false){
         this.contacts[this.activeChat].messages[index].showUtility = true;
       }else{
         this.contacts[this.activeChat].messages[index].showUtility = false;
       }
+    },
+
+    getMessageDelete(index){
+      this.contacts[this.activeChat].messages.splice(index, 1);
     }
     
   }

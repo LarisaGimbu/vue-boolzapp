@@ -116,7 +116,9 @@
                 class="utility-box">
                   <ul>
                     <li><div class="btn">Message info</div></li>
-                    <li><div class="btn">Delete message</div></li>
+                    <li><div
+                      @click="getMessageDelete(index)"
+                      class="btn">Delete message</div></li>
                   </ul>
                 </div>
               </div>
