@@ -107,9 +107,20 @@
               v-bind:class="item.status"
               class="message ">
                 <p class="text-msg">{{item.message}}</p>
-                <i class="fas fa-chevron-down"></i>
+                <i 
+                @click="item.showUtility = true"
+                class="fas fa-chevron-down"></i>
                 <p class="date">{{item.date}}</p>
+                <div 
+                :class="{'d-block': item.showUtility}"
+                class="utility-box">
+                  <ul>
+                    <li><div class="btn">Message info</div></li>
+                    <li><div class="btn">Delete message</div></li>
+                  </ul>
+                </div>
               </div>
+              
             </div>
           </div>
 

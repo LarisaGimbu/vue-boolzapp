@@ -212,6 +212,7 @@ main{
 
 .msg-container{
   display: flex;
+  position: relative;
   flex-direction: column;
   width: 80%;
   margin: 0 auto;
@@ -235,6 +236,25 @@ main{
   font-size: 8px;
   text-align: end;
   padding-top: 0;
+}
+
+.utility-box{
+  display: none;
+  position: absolute;
+  top: 16px;
+  right: 0;
+  width: 100px;
+  font-size: 12px;
+  text-align: center;
+  background-color: white;
+  box-shadow: 1px 1px 2px gray;
+}
+.utility-box ul{
+  list-style: none;
+}
+.utility-box .btn:hover{
+  background-color: lightgray;
+  cursor: pointer;
 }
 
 .message{
