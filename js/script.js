@@ -15,16 +15,16 @@ const app = new Vue({
             showUtility: false
           },
           {
-              date: '10/01/2020 15:50:00',
-              message: 'Ricordati di dargli da mangiare',
-              status: 'sent',
-              showUtility: false
+            date: '10/01/2020 15:50:00',
+            message: 'Ricordati di dargli da mangiare',
+            status: 'sent',
+            showUtility: false
           },
           {
-              date: '10/01/2020 16:15:22',
-              message: 'Tutto fatto!',
-              status: 'received',
-              showUtility: false
+            date: '10/01/2020 16:15:22',
+            message: 'Tutto fatto!',
+            status: 'received',
+            showUtility: false
           }
         ],
       },
@@ -40,16 +40,16 @@ const app = new Vue({
             showUtility: false
           },
           {
-              date: '20/03/2020 16:30:55',
-              message: 'Bene grazie! Stasera ci vediamo?',
-              status: 'received',
-              showUtility: false
+            date: '20/03/2020 16:30:55',
+            message: 'Bene grazie! Stasera ci vediamo?',
+            status: 'received',
+            showUtility: false
           },
           {
-              date: '20/03/2020 16:35:00',
-              message: 'Mi piacerebbe ma devo andare a fare la spesa.',
-              status: 'sent',
-              showUtility: false
+            date: '20/03/2020 16:35:00',
+            message: 'Mi piacerebbe ma devo andare a fare la spesa.',
+            status: 'sent',
+            showUtility: false
           }
         ],
       },
@@ -65,16 +65,16 @@ const app = new Vue({
             showUtility: false
           },
           {
-              date: '28/03/2020 10:20:10',
-              message: 'Sicuro di non aver sbagliato chat?',
-              status: 'sent',
-              showUtility: false
+            date: '28/03/2020 10:20:10',
+            message: 'Sicuro di non aver sbagliato chat?',
+            status: 'sent',
+            showUtility: false
           },
           {
-              date: '28/03/2020 16:15:22',
-              message: 'Ah scusa!',
-              status: 'received',
-              showUtility: false
+            date: '28/03/2020 16:15:22',
+            message: 'Ah scusa!',
+            status: 'received',
+            showUtility: false
           }
       ],
       },
@@ -90,10 +90,10 @@ const app = new Vue({
             showUtility: false
           },
           {
-              date: '10/01/2020 15:50:00',
-              message: 'Si, ma preferirei andare al cinema ',
-              status: 'received',
-              showUtility: false
+            date: '10/01/2020 15:50:00',
+            message: 'Si, ma preferirei andare al cinema ',
+            status: 'received',
+            showUtility: false
           }
         ],
       },
@@ -129,6 +129,7 @@ const app = new Vue({
         date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
         message: this.textInput,
         status: 'sent',
+        showUtility: false
         
       })
 
@@ -159,8 +160,20 @@ const app = new Vue({
         console.log(this.contacts[i].visible);
       }
       
-    }
+    },
 
+    showUtilityBox(index){
+      for(let i= 0; i< this.contacts[this.activeChat].messages.length -1 ; i++ ){
+        this.contacts[this.activeChat].messages[i].showUtility = false;
+      }
+      
+
+      if(this.contacts[this.activeChat].messages[index].showUtility === false){
+        this.contacts[this.activeChat].messages[index].showUtility = true;
+      }else{
+        this.contacts[this.activeChat].messages[index].showUtility = false;
+      }
+    }
     
   }
 
