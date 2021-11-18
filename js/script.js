@@ -1,23 +1,6 @@
 const app = new Vue({
   el:'#app',
-
-  mounted() {
-   
-    
-    this.contacts.forEach((contact, index, array)=>{
-      for(let i = 0; i<= contact.name.length -1; i++){
-        // console.log(contact.name.charAt(i));
-        
-        if(this.searchChat === contact.name.charAt(i)){
-          
-        }
-        
-      }
-    })
-    
-    console.log(this.searchChat );
-  },
-  
+ 
   data:{
     contacts:[
       {
@@ -45,7 +28,7 @@ const app = new Vue({
       {
         name: 'Fabio',
         avatar: 'img/avatar_2.jpg',
-        visible: false,
+        visible: true,
         messages: [
           {
             date: '20/03/2020 16:30:00',
@@ -67,7 +50,7 @@ const app = new Vue({
       {
         name: 'Samuel',
         avatar: 'img/avatar_3.jpg',
-        visible: false,
+        visible: true,
         messages: [
           {
             date: '28/03/2020 10:10:40',
@@ -89,7 +72,7 @@ const app = new Vue({
       {
         name: 'Luisa',
         avatar: 'img/avatar_6.jpg',
-        visible: false,
+        visible: true,
         messages: [
           {
             date: '10/01/2020 15:30:55',
@@ -108,23 +91,10 @@ const app = new Vue({
 
     textInput: '',
 
-    searchChat:'',
-
+    searchChat: '',
   },
 
   methods:{
-    showChat(index){
-      this.activeChat = index;
-
-      this.contacts.forEach((contact) =>{
-        if(contact.visible === true){
-          contact.visible = false;
-        }
-      })
-
-      this.contacts[index].visible= true;
-      
-    },
     getLastMessage(index){
       lastMessage= this.contacts[index].messages[this.contacts[index].messages.length -1].message;
 
@@ -162,6 +132,20 @@ const app = new Vue({
       }, 3000)
 
     },
+
+    getSearchChat(){
+      
+      for(let i= 0; i<= this.contacts.length; i++){
+        if(this.contacts[i].name.toUpperCase().includes(this.searchChat.toUpperCase())){
+          this.contacts[i].visible = true;
+        }else{
+          this.contacts[i].visible = false;
+        }
+
+        console.log(this.contacts[i].visible);
+      }
+      
+    }
 
     
   }
