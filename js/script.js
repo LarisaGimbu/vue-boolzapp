@@ -129,7 +129,7 @@ const app = new Vue({
         lastAccess = dayjs().format("DD/MM/YYYY HH:mm:ss");
       }
       
-      return lastAccess;
+      return `Ultimo accesso ${lastAccess}`;
     },
 
     insertNewMessage(){
@@ -142,6 +142,37 @@ const app = new Vue({
           showUtility: false
           
         })
+
+        switch(this.textInput.toUpperCase()){
+          case 'CIAO':
+          case 'BUONGIORNO':
+            reply= 'Ciao!';
+            break;
+          case 'COME STAI?':
+            reply= 'Bene tu?';
+            break;
+          case 'BENE':
+          case 'BENE DAI':
+          case 'DEVO DIRE BENE':
+          case 'MOLTO BENE':
+          case 'BENE GRAZIE':
+            reply= 'Mi fa piacere';
+            break;
+          case 'QUANDO?':
+            reply= 'Quando vuoi tu';
+            break;
+          case 'TI AMO':
+            reply= 'Scusa ma io no';
+            break;
+          case 'TI VA DI VEDERCI?':
+          case 'TI VA DI USCIRE?':
+          case 'POSSIAMO PARLARE?':
+            reply= 'Si va bene!'
+            break;
+          default:
+            reply= 'Scusa non ho capito cosa hai scritto'
+          
+        }
   
         this.textInput ='';
   
@@ -149,7 +180,7 @@ const app = new Vue({
           
           this.contacts[this.activeChat].messages.push({
             date: dayjs().format("DD/MM/YYYY HH:mm"),
-            message: 'ok',
+            message: reply,
             status: 'received',
             showUtility: false
           })
