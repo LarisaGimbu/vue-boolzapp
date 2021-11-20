@@ -95,34 +95,30 @@ const app = new Vue({
 
     showUtilityBox: -1,
 
+    reply: ''
+
   },
 
   methods:{
     getLastMessage(index){
-      if(this.contacts[index].messages != 0){
-        lastMessage= this.contacts[index].messages[this.contacts[index].messages.length -1].message;
 
-        if(lastMessage.length > 30){
-          lastMessage = lastMessage.substr(0 , 30);
-        }
+      lastMessage= this.contacts[index].messages[this.contacts[index].messages.length -1].message;
 
-        return lastMessage;
+      if(lastMessage.length > 30){
+        lastMessage = lastMessage.substr(0 , 30);
       }
-      
 
-      
+      return lastMessage;
     },
+    
     getLastDate(index){
-      if(this.contacts[index].messages != 0){
-        lastDate= this.contacts[index].messages[this.contacts[index].messages.length -1].date;
+      lastDate= this.contacts[index].messages[this.contacts[index].messages.length -1].date;
 
-        return lastDate;
-      }
-      
+      return lastDate; 
     },
 
     getLastAccess(){
-      if(this.contacts[this.activeChat].messages != 0){
+      if(this.contacts[this.activeChat].messages.length > 0){
         lastAccess= this.contacts[this.activeChat].messages[this.contacts[this.activeChat].messages.length -1].date;
 
       }else{
@@ -187,7 +183,6 @@ const app = new Vue({
   
         }, 3000)
       }
-      
 
     },
 

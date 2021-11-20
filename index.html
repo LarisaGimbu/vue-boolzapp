@@ -64,10 +64,10 @@
                 <img :src="contact.avatar" alt="">
                 <div class="friend-description">
                   <h5 class="name">{{contact.name}}</h5>
-                  <p class="msg-text">{{getLastMessage(index)}}</p>
+                  <p v-if="contacts[index].messages.length > 0" class="msg-text">{{getLastMessage(index)}}</p>
                 </div>
               </div>
-              <div class="date">
+              <div v-if="contacts[index].messages.length > 0" class="date">
                 <p>{{getLastDate(index)}}</p>
               </div>
   
