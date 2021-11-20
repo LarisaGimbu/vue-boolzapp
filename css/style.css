@@ -263,6 +263,7 @@ main{
   padding: 10px 0 3px 10px;
   border-radius: 15px;
   margin-bottom: 10px;
+  overflow: hidden;
 }
 .msg-container .sent{
   background-color: #D6FABB;
@@ -288,6 +289,12 @@ main{
 .main-bottom i{
   color: #6B7276;
   padding: 20px;
+}
+
+.main-bottom .fa-microphone:active{
+  background-color: #b4e98c;
+  padding: 15px 20px;
+  border-radius: 50%;
 }
 .main-bottom input{
   border: none;
